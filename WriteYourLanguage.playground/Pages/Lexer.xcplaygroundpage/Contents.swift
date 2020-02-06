@@ -24,7 +24,7 @@ enum Token {
 struct Lexer {
     
     static func tokenize(_ input: String) -> [Token] {
-        return input.characters.flatMap {
+        return input.compactMap {
             switch $0 {
                 case "(": return Token.parensOpen
                 case ")": return Token.parensClose
